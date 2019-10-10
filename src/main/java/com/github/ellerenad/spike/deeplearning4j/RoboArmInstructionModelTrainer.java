@@ -145,7 +145,7 @@ public class RoboArmInstructionModelTrainer {
         DataSet allData;
         try (RecordReader recordReader = new CSVRecordReader(0, '|')) {
             recordReader.initialize(new FileSplit(new File(path)));
-            DataSetIterator iterator = new RecordReaderDataSetIterator(recordReader, TOTAL_LINES, LABEL_INDEX, FEATURES_COUNT);
+            DataSetIterator iterator = new RecordReaderDataSetIterator(recordReader, TOTAL_LINES, LABEL_INDEX, CLASSES_COUNT);
             allData = iterator.next();
         }
         return allData;
