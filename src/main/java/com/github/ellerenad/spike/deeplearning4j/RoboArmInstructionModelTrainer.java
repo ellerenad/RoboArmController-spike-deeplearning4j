@@ -112,6 +112,10 @@ public class RoboArmInstructionModelTrainer {
     }
 
     private static void store(MultiLayerNetwork model, DataNormalization normalizer, String basePath) throws IOException {
+        // Creating the folder to store the data
+        File baseLocationToSaveModel = new File(basePath);
+        baseLocationToSaveModel.mkdirs();
+
         File locationToSaveModel = new File(basePath + Constants.STORED_MODEL_FILENAME);
         model.save(locationToSaveModel, false);
 
